@@ -1,8 +1,7 @@
-
-Employee Management System (MERN)
+Employee Management System (MERN Stack)
 
 A full-stack Employee Management System built using the MERN stack.
-The application allows authenticated users to register, log in, and manage employees, including creating, viewing, searching, filtering, updating, and deleting employee records.
+This application allows authenticated users to manage employee records securely, including adding, viewing, searching, filtering, updating, and deleting employees.
 
 Tech Stack
 Frontend
@@ -11,21 +10,11 @@ React 18
 
 Vite
 
-React Context API (Authentication)
+Context API (Authentication)
 
 Axios / Fetch API
 
-CSS (custom styling)
-
-Files
-
-frontend/package.json
-
-frontend/vite.config.js
-
-frontend/src/main.jsx
-
-frontend/src/context/AuthContext.jsx
+CSS
 
 Backend
 
@@ -35,7 +24,7 @@ Express.js
 
 MongoDB
 
-Mongoose
+Mongoose ODM
 
 JWT Authentication
 
@@ -43,56 +32,56 @@ dotenv
 
 CORS
 
-Files
-
-backend/package.json
-
-backend/server.js
-
 Database
 
 MongoDB Atlas
 
-Mongoose ODM
-
-## Project Structure (Key Files)
-
+Project Structure (Key Files)
 employee-management/
 ├── backend/
-│ ├── server.js # Server entry point
-│ ├── package.json
-│ ├── .env # Environment variables
-│ ├── config/
-│ │ └── db.js # MongoDB connection
-│ ├── middleware/
-│ │ └── auth.js # JWT authentication middleware
-│ ├── models/
-│ │ ├── User.js # User schema
-│ │ └── Employee.js # Employee schema
-│ └── routes/
-│ ├── auth.js # Auth routes (signup/login)
-│ └── employees.js # Employee CRUD routes
+│   ├── server.js              # Server entry point
+│   ├── package.json
+│   ├── .env                   # Environment variables
+│   │
+│   ├── config/
+│   │   └── db.js               # MongoDB connection
+│   │
+│   ├── middleware/
+│   │   └── auth.js             # JWT authentication middleware
+│   │
+│   ├── models/
+│   │   ├── User.js             # User schema
+│   │   └── Employee.js         # Employee schema
+│   │
+│   └── routes/
+│       ├── auth.js             # Auth routes (signup/login)
+│       └── employees.js        # Employee CRUD routes
 │
 ├── frontend/
-│ ├── index.html
-│ ├── package.json
-│ ├── vite.config.js
-│ └── src/
-│ ├── main.jsx # App entry
-│ ├── App.jsx # App wrapper
-│ ├── context/
-│ │ └── AuthContext.jsx
-│ ├── components/
-│ │ ├── Login.jsx
-│ │ ├── Signup.jsx
-│ │ ├── Dashboard.jsx
-│ │ ├── EmployeeForm.jsx
-│ │ ├── EmployeeList.jsx
-│ │ ├── SearchEmployees.jsx
-│ │ └── Navbar.jsx
-│ └── assets/
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   │
+│   └── src/
+│       ├── main.jsx            # App entry
+│       ├── App.jsx             # App wrapper
+│       │
+│       ├── context/
+│       │   └── AuthContext.jsx # Authentication state management
+│       │
+│       ├── components/
+│       │   ├── Login.jsx
+│       │   ├── Signup.jsx
+│       │   ├── Dashboard.jsx
+│       │   ├── EmployeeForm.jsx
+│       │   ├── EmployeeList.jsx
+│       │   ├── SearchEmployees.jsx
+│       │   └── Navbar.jsx
+│       │
+│       └── assets/
 │
 └── README.md
+
 
 Features
 Authentication
@@ -100,6 +89,8 @@ Authentication
 User signup & login using JWT
 
 Protected routes using authentication middleware
+
+Secure access control for API routes
 
 Each user can access only their own employees
 
@@ -109,34 +100,30 @@ Add new employees
 
 View all employees
 
+Update employee details
+
+Delete employees
+
 Search employees by name, email, or department
 
 Filter employees by department and position
 
-Update employee details
-
-Delete employee records
-
 Environment Variables
 
-Create a .env file inside the backend/ directory.
+Create a .env file inside the backend directory.
 
-backend/.env
 PORT=5000
 MONGO_URI=YOUR_MONGODB_ATLAS_URI
 JWT_SECRET=YOUR_SECRET_KEY
 
-How to Run (Development)
+How to Run the Project (Development)
 Backend Setup
 cd backend
 npm install
 npm start
 
 
-Server runs on: http://localhost:5000
-
-Root test endpoint:
-GET / → Employee Management System API
+Backend runs on: http://localhost:5000
 
 Frontend Setup
 cd frontend
@@ -146,33 +133,33 @@ npm run dev
 
 Frontend runs on: http://localhost:5173
 
-Backend API calls are made directly to http://localhost:5000
+Frontend communicates with backend on port 5000
 
 Authentication Flow
 
-User logs in / signs up
+User signs up or logs in
 
 Backend generates a JWT token
 
-Token is sent in headers for protected routes
+Token is stored and sent in request headers
 
-auth middleware verifies token and extracts userId
+Protected routes validate token via middleware
 
-Employee data is linked using createdBy: userId
+Employee records are linked to the authenticated user
 
-API Endpoints Overview
+API Endpoints
 Auth Routes
 Method	Endpoint	Description
-POST	/api/auth/signup	Register a new user
+POST	/api/auth/signup	Register new user
 POST	/api/auth/login	Login user
 Employee Routes (Protected)
 Method	Endpoint	Description
 POST	/api/employees	Create employee
-GET	/api/employees	Get employees (search & filter supported)
+GET	/api/employees	Get all employees
 PUT	/api/employees/:id	Update employee
 DELETE	/api/employees/:id	Delete employee
 
-Query Parameters (GET)
+Query Parameters (GET employees)
 
 search → name / email / department
 
@@ -181,29 +168,29 @@ department
 position
 
 Common Troubleshooting
-❌ Unauthorized Access
+Unauthorized Error
 
 Ensure JWT token is sent in request headers
 
-Check token expiry and secret key
+Check token expiration and secret key
 
-❌ MongoDB Connection Error
+MongoDB Connection Error
 
 Verify MONGO_URI
 
-Ensure Atlas IP access is allowed
+Ensure IP is allowed in MongoDB Atlas
 
-❌ Frontend Not Connecting to Backend
+Frontend Not Connecting to Backend
 
 Confirm backend is running on port 5000
 
-Check API URLs in frontend components
+Check API URLs in frontend code
 
 Future Enhancements
 
 Role-based access (Admin / Manager)
 
-Pagination for employee lists
+Pagination for employee listing
 
 Export employee data (CSV / PDF)
 
@@ -213,14 +200,16 @@ References (Core Files)
 
 Backend entry: backend/server.js
 
-DB connection: backend/config/db.js
+Database config: backend/config/db.js
 
 Auth middleware: backend/middleware/auth.js
 
 Employee routes: backend/routes/employees.js
 
-Auth routes: backend/routes/auth.js
-
 Frontend entry: frontend/src/main.jsx
 
 Auth context: frontend/src/context/AuthContext.jsx
+
+Author
+
+Pallavi More
