@@ -55,49 +55,42 @@ MongoDB Atlas
 
 Mongoose ODM
 
-Project Structure (Key Files)
+## Project Structure (Key Files)
+
 employee-management/
-│
 ├── backend/
-│   ├── server.js              # Server entry point
-│   ├── package.json
-│   ├── .env                   # Environment variables
-│   │
-│   ├── config/
-│   │   └── db.js               # MongoDB connection
-│   │
-│   ├── middleware/
-│   │   └── auth.js             # JWT authentication middleware
-│   │
-│   ├── models/
-│   │   ├── User.js             # User schema
-│   │   └── Employee.js         # Employee schema
-│   │
-│   └── routes/
-│       ├── auth.js             # Auth routes (signup/login)
-│       └── employees.js        # Employee CRUD routes
+│ ├── server.js # Server entry point
+│ ├── package.json
+│ ├── .env # Environment variables
+│ ├── config/
+│ │ └── db.js # MongoDB connection
+│ ├── middleware/
+│ │ └── auth.js # JWT authentication middleware
+│ ├── models/
+│ │ ├── User.js # User schema
+│ │ └── Employee.js # Employee schema
+│ └── routes/
+│ ├── auth.js # Auth routes (signup/login)
+│ └── employees.js # Employee CRUD routes
 │
 ├── frontend/
-│   ├── index.html
-│   ├── package.json
-│   ├── vite.config.js
-│   │
-│   └── src/
-│       ├── main.jsx            # App entry
-│       ├── App.jsx             # App wrapper
-│       ├── context/
-│       │   └── AuthContext.jsx # Auth state management
-│       │
-│       ├── components/
-│       │   ├── Login.jsx
-│       │   ├── Signup.jsx
-│       │   ├── Dashboard.jsx
-│       │   ├── EmployeeForm.jsx
-│       │   ├── EmployeeList.jsx
-│       │   ├── SearchEmployees.jsx
-│       │   └── Navbar.jsx
-│       │
-│       └── assets/
+│ ├── index.html
+│ ├── package.json
+│ ├── vite.config.js
+│ └── src/
+│ ├── main.jsx # App entry
+│ ├── App.jsx # App wrapper
+│ ├── context/
+│ │ └── AuthContext.jsx
+│ ├── components/
+│ │ ├── Login.jsx
+│ │ ├── Signup.jsx
+│ │ ├── Dashboard.jsx
+│ │ ├── EmployeeForm.jsx
+│ │ ├── EmployeeList.jsx
+│ │ ├── SearchEmployees.jsx
+│ │ └── Navbar.jsx
+│ └── assets/
 │
 └── README.md
 
