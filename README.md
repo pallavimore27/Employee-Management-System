@@ -72,6 +72,7 @@ Express Validator
 📂 Project Structure
 
 employee-management/
+
 │
 ├── backend/
 
@@ -87,6 +88,7 @@ employee-management/
 
 │   └── .env              # Environment variables
 │
+
 ├── frontend/
 
 │   ├── public/
@@ -104,7 +106,9 @@ employee-management/
 │   │   └── main.jsx
 
 │   └── vite.config.js
+
 │
+
 └── README.md
 
 
