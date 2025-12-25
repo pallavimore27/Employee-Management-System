@@ -74,21 +74,35 @@ Express Validator
 employee-management/
 │
 ├── backend/
+
 │   ├── config/           # Database configuration
+
 │   ├── middleware/       # Authentication middleware
+
 │   ├── models/           # Mongoose schemas
+
 │   ├── routes/           # API routes
+
 │   ├── server.js         # Backend entry point
+
 │   └── .env              # Environment variables
 │
 ├── frontend/
+
 │   ├── public/
+
 │   ├── src/
+
 │   │   ├── components/   # Reusable UI components
+
 │   │   ├── pages/        # Dashboard, Employees, Login, etc.
+
 │   │   ├── utils/        # Utility functions
+
 │   │   ├── App.jsx
+
 │   │   └── main.jsx
+
 │   └── vite.config.js
 │
 └── README.md
