@@ -1,18 +1,18 @@
-📌 Employee Management System (EMS)
+📌 Employee Management System
 
 A full-stack Employee Management System built using React, Node.js, Express, and MongoDB.
-This application helps organizations manage employees, departments, leaves, and authentication efficiently with a clean UI and secure backend APIs.
+This application allows admins to manage employee records with secure authentication and a modern dashboard UI.
 
-🚀 Features
-🔐 Authentication & Authorization
+🚀 Features (Only What Exists in Your Project)
+🔐 Authentication
 
-User registration and login
+User registration
+
+User login
 
 JWT-based authentication
 
-Protected routes using middleware
-
-Role-based access (Admin/User)
+Protected API routes using middleware
 
 👨‍💼 Employee Management
 
@@ -24,7 +24,7 @@ Update employee details
 
 Delete employees
 
-Department and position management
+Department and position handling
 
 📊 Dashboard
 
@@ -32,35 +32,17 @@ Total employees count
 
 Department-wise employee statistics
 
-Salary statistics (average, min, max)
-
-Centralized admin dashboard
-
-🏖 Leave Management
-
-Apply for leave
-
-View leave status
-
-Admin approval/rejection of leaves
-
-Leave history tracking
+Salary statistics (average, minimum, maximum)
 
 🔎 Search & Filter
 
 Search employees by name
 
-Filter by department and position
+Filter employees by department
 
-Reset/Clear filters option
+Filter employees by position
 
-🌐 REST API
-
-Structured RESTful APIs
-
-Proper request validation
-
-Error handling with meaningful responses
+Clear/reset filters
 
 🛠 Tech Stack
 Frontend
@@ -73,8 +55,6 @@ React Router
 
 Axios
 
-CSS / UI Components
-
 Backend
 
 Node.js
@@ -85,30 +65,31 @@ MongoDB
 
 Mongoose
 
-JWT (JSON Web Token)
+JWT
 
 Express Validator
 
 📂 Project Structure
+
 employee-management/
 │
 ├── backend/
-│   ├── config/          # Database configuration
-│   ├── middleware/      # Auth middleware
-│   ├── models/          # Mongoose schemas
-│   ├── routes/          # API routes
-│   ├── server.js        # Backend entry point
-│   ├── .env             # Environment variables
+│   ├── config/           # Database configuration
+│   ├── middleware/       # Authentication middleware
+│   ├── models/           # Mongoose schemas
+│   ├── routes/           # API routes
+│   ├── server.js         # Backend entry point
+│   └── .env              # Environment variables
 │
 ├── frontend/
 │   ├── public/
 │   ├── src/
-│   │   ├── components/  # Reusable UI components
-│   │   ├── pages/       # Pages (Dashboard, Employees, Login, etc.)
-│   │   ├── utils/       # Utility functions
+│   │   ├── components/   # Reusable UI components
+│   │   ├── pages/        # Dashboard, Employees, Login, etc.
+│   │   ├── utils/        # Utility functions
 │   │   ├── App.jsx
 │   │   └── main.jsx
-│   ├── vite.config.js
+│   └── vite.config.js
 │
 └── README.md
 
@@ -120,63 +101,13 @@ PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
-
-MongoDB can be connected using MongoDB Compass or MongoDB Atlas.
-
 ▶️ How to Run the Project
-1️⃣ Clone the Repository
-git clone <repository-url>
-cd employee-management
-
-2️⃣ Backend Setup
+Backend
 cd backend
 npm install
 npm start
 
-
-Backend will run on:
-
-http://localhost:5000
-
-3️⃣ Frontend Setup
+Frontend
 cd frontend
 npm install
 npm run dev
-
-
-Frontend will run on:
-
-http://localhost:5173
-
-🔑 API Authentication Flow
-
-User logs in
-
-JWT token is generated
-
-Token is sent in request headers:
-
-Authorization: Bearer <token>
-
-
-Middleware verifies token before accessing protected routes
-
-🧪 Testing APIs (Postman)
-
-Register/Login user
-
-Copy JWT token
-
-Use token in Authorization header
-
-Access secured employee and leave APIs
-
-📌 Resume Worthy Highlights
-
-Developed a full-stack MERN application with secure authentication and role-based access
-
-Implemented real-time employee, department, and leave management with RESTful APIs
-
-📄 License
-
-This project is for learning and educational purposes.
