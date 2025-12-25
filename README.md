@@ -121,9 +121,13 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
 ▶️ How to Run the Project
+
 Backend
+
 cd backend
+
 npm install
+
 npm start
 
 Frontend
