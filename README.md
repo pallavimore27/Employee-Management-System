@@ -93,6 +93,7 @@ employee-management/
 │
 └── README.md
 
+
 ⚙️ Environment Variables
 
 Create a .env file inside the backend folder:
