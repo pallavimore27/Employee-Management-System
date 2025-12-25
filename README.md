@@ -1,20 +1,79 @@
-Employee Management System (MERN Stack)
+📌 Employee Management System (EMS)
 
-A full-stack Employee Management System built using the MERN stack.
-This application allows authenticated users to manage employee records securely, including adding, viewing, searching, filtering, updating, and deleting employees.
+A full-stack Employee Management System built using React, Node.js, Express, and MongoDB.
+This application helps organizations manage employees, departments, leaves, and authentication efficiently with a clean UI and secure backend APIs.
 
-Tech Stack
+🚀 Features
+🔐 Authentication & Authorization
+
+User registration and login
+
+JWT-based authentication
+
+Protected routes using middleware
+
+Role-based access (Admin/User)
+
+👨‍💼 Employee Management
+
+Add new employees
+
+View employee list
+
+Update employee details
+
+Delete employees
+
+Department and position management
+
+📊 Dashboard
+
+Total employees count
+
+Department-wise employee statistics
+
+Salary statistics (average, min, max)
+
+Centralized admin dashboard
+
+🏖 Leave Management
+
+Apply for leave
+
+View leave status
+
+Admin approval/rejection of leaves
+
+Leave history tracking
+
+🔎 Search & Filter
+
+Search employees by name
+
+Filter by department and position
+
+Reset/Clear filters option
+
+🌐 REST API
+
+Structured RESTful APIs
+
+Proper request validation
+
+Error handling with meaningful responses
+
+🛠 Tech Stack
 Frontend
 
-React 18
+React.js
 
 Vite
 
-Context API (Authentication)
+React Router
 
-Axios / Fetch API
+Axios
 
-CSS
+CSS / UI Components
 
 Backend
 
@@ -24,192 +83,100 @@ Express.js
 
 MongoDB
 
-Mongoose ODM
+Mongoose
 
-JWT Authentication
+JWT (JSON Web Token)
 
-dotenv
+Express Validator
 
-CORS
-
-Database
-
-MongoDB Atlas
-
-Project Structure (Key Files)
+📂 Project Structure
 employee-management/
+│
 ├── backend/
-│   ├── server.js              # Server entry point
-│   ├── package.json
-│   ├── .env                   # Environment variables
-│   │
-│   ├── config/
-│   │   └── db.js               # MongoDB connection
-│   │
-│   ├── middleware/
-│   │   └── auth.js             # JWT authentication middleware
-│   │
-│   ├── models/
-│   │   ├── User.js             # User schema
-│   │   └── Employee.js         # Employee schema
-│   │
-│   └── routes/
-│       ├── auth.js             # Auth routes (signup/login)
-│       └── employees.js        # Employee CRUD routes
+│   ├── config/          # Database configuration
+│   ├── middleware/      # Auth middleware
+│   ├── models/          # Mongoose schemas
+│   ├── routes/          # API routes
+│   ├── server.js        # Backend entry point
+│   ├── .env             # Environment variables
 │
 ├── frontend/
-│   ├── index.html
-│   ├── package.json
+│   ├── public/
+│   ├── src/
+│   │   ├── components/  # Reusable UI components
+│   │   ├── pages/       # Pages (Dashboard, Employees, Login, etc.)
+│   │   ├── utils/       # Utility functions
+│   │   ├── App.jsx
+│   │   └── main.jsx
 │   ├── vite.config.js
-│   │
-│   └── src/
-│       ├── main.jsx            # App entry
-│       ├── App.jsx             # App wrapper
-│       │
-│       ├── context/
-│       │   └── AuthContext.jsx # Authentication state management
-│       │
-│       ├── components/
-│       │   ├── Login.jsx
-│       │   ├── Signup.jsx
-│       │   ├── Dashboard.jsx
-│       │   ├── EmployeeForm.jsx
-│       │   ├── EmployeeList.jsx
-│       │   ├── SearchEmployees.jsx
-│       │   └── Navbar.jsx
-│       │
-│       └── assets/
 │
 └── README.md
 
+⚙️ Environment Variables
 
-Features
-Authentication
-
-User signup & login using JWT
-
-Protected routes using authentication middleware
-
-Secure access control for API routes
-
-Each user can access only their own employees
-
-Employee Management
-
-Add new employees
-
-View all employees
-
-Update employee details
-
-Delete employees
-
-Search employees by name, email, or department
-
-Filter employees by department and position
-
-Environment Variables
-
-Create a .env file inside the backend directory.
+Create a .env file inside the backend folder:
 
 PORT=5000
-MONGO_URI=YOUR_MONGODB_ATLAS_URI
-JWT_SECRET=YOUR_SECRET_KEY
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secret_key
 
-How to Run the Project (Development)
-Backend Setup
+
+MongoDB can be connected using MongoDB Compass or MongoDB Atlas.
+
+▶️ How to Run the Project
+1️⃣ Clone the Repository
+git clone <repository-url>
+cd employee-management
+
+2️⃣ Backend Setup
 cd backend
 npm install
 npm start
 
 
-Backend runs on: http://localhost:5000
+Backend will run on:
 
-Frontend Setup
+http://localhost:5000
+
+3️⃣ Frontend Setup
 cd frontend
 npm install
 npm run dev
 
 
-Frontend runs on: http://localhost:5173
+Frontend will run on:
 
-Frontend communicates with backend on port 5000
+http://localhost:5173
 
-Authentication Flow
+🔑 API Authentication Flow
 
-User signs up or logs in
+User logs in
 
-Backend generates a JWT token
+JWT token is generated
 
-Token is stored and sent in request headers
+Token is sent in request headers:
 
-Protected routes validate token via middleware
+Authorization: Bearer <token>
 
-Employee records are linked to the authenticated user
 
-API Endpoints
-Auth Routes
-Method	Endpoint	Description
-POST	/api/auth/signup	Register new user
-POST	/api/auth/login	Login user
-Employee Routes (Protected)
-Method	Endpoint	Description
-POST	/api/employees	Create employee
-GET	/api/employees	Get all employees
-PUT	/api/employees/:id	Update employee
-DELETE	/api/employees/:id	Delete employee
+Middleware verifies token before accessing protected routes
 
-Query Parameters (GET employees)
+🧪 Testing APIs (Postman)
 
-search → name / email / department
+Register/Login user
 
-department
+Copy JWT token
 
-position
+Use token in Authorization header
 
-Common Troubleshooting
-Unauthorized Error
+Access secured employee and leave APIs
 
-Ensure JWT token is sent in request headers
+📌 Resume Worthy Highlights
 
-Check token expiration and secret key
+Developed a full-stack MERN application with secure authentication and role-based access
 
-MongoDB Connection Error
+Implemented real-time employee, department, and leave management with RESTful APIs
 
-Verify MONGO_URI
+📄 License
 
-Ensure IP is allowed in MongoDB Atlas
-
-Frontend Not Connecting to Backend
-
-Confirm backend is running on port 5000
-
-Check API URLs in frontend code
-
-Future Enhancements
-
-Role-based access (Admin / Manager)
-
-Pagination for employee listing
-
-Export employee data (CSV / PDF)
-
-Deployment using Render / Vercel
-
-References (Core Files)
-
-Backend entry: backend/server.js
-
-Database config: backend/config/db.js
-
-Auth middleware: backend/middleware/auth.js
-
-Employee routes: backend/routes/employees.js
-
-Frontend entry: frontend/src/main.jsx
-
-Auth context: frontend/src/context/AuthContext.jsx
-
-Author
-
-Pallavi More
+This project is for learning and educational purposes.
